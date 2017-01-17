@@ -1,13 +1,16 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" ng-app="miApp">
 <head>
     <meta charset="UTF-8">
     <title>Prueba</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.min.js"></script>
+    <script src="js/main.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/estilos.css">
 </head>
 <body>
-    <h1>Prueba</h1>
-    <p>Esto es una Prueba</p>
-    <p>Nueva linea</p>
-    
+    <div class="constructor" ng-controller="controlador1">    
+        <h1>Hola!</h1>
+        <p>Mi nombre es {{nombre}}</p>
+    </div>
 </body>
 </html>
