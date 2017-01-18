@@ -1,6 +1,6 @@
-var miapp = angular.module('miApp', []);
+var miapp = angular.module('miApp', [/*'Firebase'*/]);
 
-miapp.controller('controlador1', function ($scope, $http) {
+miapp.controller('controlador1', function ($scope, $http/*, $firebaseArray*/) {
     $scope.nombre = "Aitor"
 
     $http.get('productos.json')
@@ -13,10 +13,22 @@ var url = 'http://mysafeinfo.com/api/data?list=englishmonarchs&format=json';
             console.log(res) 
             $scope.datos = res.data 
         });
+
+ /*       // firebase
+        var ref = new Firebase("https://pruebas-angular.firebaseio.com/");
+
+        $scope.listaNombres = $firebaseArray(ref);
+
+        $scope.agregarNombre = function(){
+            $scope.listaProductos.$add({
+                nombre:$scope.fireNombre
+            })
+            $scope.fireNombre = '';
+        }*/
 });
 
 miapp.directive('tuNombre', function () {
     return {
         template: 'Tu nombre es {{minombre}}'
     }
-})
+});

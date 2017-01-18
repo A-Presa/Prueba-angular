@@ -25,7 +25,7 @@
 
         <div class="seccion">
             <h3>Datos remotos</h3>
-            
+
             <p>Lista desde JSON</p>
             <ul>
                 <li ng-repeat="item in listaProductos">{{item.nombre}}</li>
@@ -38,6 +38,14 @@
                 <li>{{datos[0].nm}}</li>
                 <li>{{datos[0].yrs}}</li>
             </ul>
+        </div>
+
+        <div class="seccion">
+            <h3>Datos desde Firebase</h3>
+            <input type="text" ng-model="fireNombre">
+            <button ng-click="agregarNombre()">Agregar</button>
+            <button ng-click="eliminarNombre()">Eliminar</button>
+            <div ng-repeat="item in listaNombres"></div>
         </div>
     </div>
 </body>
