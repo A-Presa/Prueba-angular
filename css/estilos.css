@@ -1,4 +1,11 @@
-.constructor{
+.contenedor{
     margin: 20px auto;
-    width: 50%;
+    width: 80%;
+    display: flex;
+    flex-wrap: wrap;
+}
+.seccion{
+    padding: 10px;
+    border: 1px dashed darkgrey;
+    margin: 10px;
 }

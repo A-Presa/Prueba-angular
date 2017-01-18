@@ -10,14 +10,35 @@
 </head>
 
 <body>
-    <div class="constructor" ng-controller="controlador1">
-        <h1>Hola!</h1>
-        <p>Mi nombre es: {{nombre}}</p>
-        <input type="text" name="texto" value="" ng-model="nombre">
+    <div class="contenedor" ng-controller="controlador1">
+        <div class="seccion">
+            <h3>Hola!</h3>
+            <p>Mi nombre es: {{nombre}}</p>
+            <input type="text" name="texto" value="" ng-model="nombre">
+        </div>
 
-        <h3>Prueba de directivas personalizadas</h3>
-        <input type="text" placeholder="Introduce tu nombre" ng-model="minombre">
-        <div tu-nombre></div>
+        <div class="seccion">
+            <h3>Prueba de directivas personalizadas</h3>
+            <input type="text" placeholder="Introduce tu nombre" ng-model="minombre">
+            <div tu-nombre></div>
+        </div>
+
+        <div class="seccion">
+            <h3>Datos remotos</h3>
+            
+            <p>Lista desde JSON</p>
+            <ul>
+                <li ng-repeat="item in listaProductos">{{item.nombre}}</li>
+            </ul>
+
+            <p>Datos de JSON online</p>
+            <ul>
+                <li>{{datos[0].cty}}</li>
+                <li>{{datos[0].hse}}</li>
+                <li>{{datos[0].nm}}</li>
+                <li>{{datos[0].yrs}}</li>
+            </ul>
+        </div>
     </div>
 </body>
 
