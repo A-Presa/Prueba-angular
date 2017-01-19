@@ -39,13 +39,21 @@
                 <li>{{datos[0].yrs}}</li>
             </ul>
         </div>
-
         <div class="seccion">
-            <h3>Datos desde Firebase</h3>
-            <input type="text" ng-model="fireNombre">
-            <button ng-click="agregarNombre()">Agregar</button>
-            <button ng-click="eliminarNombre()">Eliminar</button>
-            <div ng-repeat="item in listaNombres"></div>
+            <h3>Filtros de busqueda</h3>
+            Buscar: <input type="text" ng-model="busqueda">
+            <table>
+                <tr>
+                    <th><a href="" ng-click="campoFiltro='hse'; inverso = !inverso">Casa</a></th>
+                    <th><a href="" ng-click="campoFiltro='nm'; inverso = !inverso">Nombre</a></th>
+                    <th><a href="" ng-click="campoFiltro='yrs'; inverso = !inverso">Fecha</a></th>
+                </tr>
+                <tr ng-repeat="item in datos | filter:busqueda | orderBy:campoFiltro:inverso">
+                    <td>{{item.hse}}</td>
+                    <td>{{item.nm}}</td>
+                    <td>{{item.yrs}}</td>
+                </tr>
+            </table>
         </div>
     </div>
 </body>
